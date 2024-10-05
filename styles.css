@@ -4,12 +4,16 @@
   box-sizing: border-box; /* If you set box-sizing: border-box; on an element, padding and border are included in the width and height */
 }
 
+/* CSS - STYLING THE HTML BODY ELEMENT */
+
 body {
   margin: 0; /* Overwrite default margin */
   font-family: system-ui, sans-serif;
   color: black;
   background-color: white;
 }
+
+/* CSS - STYLING THE HTML NAV ELEMENT */
 
 nav {
   /* This block defines the styling for the entire navigation bar. */
@@ -41,18 +45,109 @@ nav a[aria-current='page'] {
   background-color: #d4d4d4;
 }
 
+/* CSS - STYLING THE HTML MAIN ELEMENT */
+
 main {
   padding: 1rem;
 }
+
+/* CSS - STYLING THE HTML HEADING ELEMENT H1 */
 
 h1 {
   font-weight: bold;
   font-size: 1.5rem;
 }
 
+/* CSS - STYLING THE HTML FOOTER ELEMENT */
+
 footer {
   text-align: center;
   background-color: #1d2025;
   padding: 1.5rem;
   color: white;
+}
+
+/* CSS - STYLING HTML CLASSES */
+
+.article_flex {
+  display: flex; /* This property turns the element into a flex container, allowing its direct children (flex items) to be arranged according to the rules of the flexbox model. */
+  flex-direction: column; /* This property specifies the direction of the flex items (the children of the container). By setting it to column, the items will be arranged vertically (one below the other) instead of the default horizontal arrangement (left to right). */
+  justify-content: center; /* The value center means that the items will be centered within the flex container. */
+  align-items: center; /* The value center means that the items will be centered horizontally within the flex container. */ 
+  }
+
+  .div_flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+
+    .article_grid {
+      display: grid;
+      /* grid-template-columns: repeat(3, 400px); */
+      /* grid-template-rows: repeat(4, 100px); */
+      grid-template-areas: 
+      "grid_one grid_one grid_one"
+      "grid_two grid_three grid_four"
+      ;
+      place-items: center;
+  }   
+
+  .grid_one {
+    grid-area: grid_one;
+}
+
+.grid_two {
+    grid-area: grid_two;
+}
+
+.grid_three {
+    grid-area: grid_three;
+}
+
+.grid_four {
+    grid-area: grid_four;
+}
+
+.image_one {
+  width: 1000px;
+  height: 1000px;
+  background-image: url("https://images.unsplash.com/photo-1721757178328-b0b7f9db730e?q=80&w=1746&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-attachment: fixed;
+}
+
+.image_two {
+  width: 1000px;
+  height: 1000px;
+  background-image: url("https://images.unsplash.com/photo-1722151728302-399527ea42d7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-attachment: fixed;
+}
+
+/* CSS - STYLING IMAGES */
+
+img {
+  max-width: 50%;
+}
+
+/* CSS - RESPONSIVE */
+
+@media (max-width: 376px) {
+  .article_grid {
+      grid-template-areas: 
+      "grid_one"
+      "grid_two"
+      "grid_three"
+      "grid_four"
+      ;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1023px) {
+  .article_grid {
+      grid-template-areas: 
+      "grid_one grid_one"
+      "grid_two grid_three"
+      "grid_four"
+      ;
+  }
 }
